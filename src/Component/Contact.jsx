@@ -12,7 +12,12 @@ const Contact = () => {
 
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  const steps = [
+    { icon: MessageCircle, text: "Contact me" },
+    { icon: Book, text: "Give me the project" },
+    { icon: CheckCircle, text: "Allow me to do the job" },
+    { icon: DollarSign, text: "Make your payment" }
+  ];
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
