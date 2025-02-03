@@ -321,7 +321,7 @@ const App = () => {
 
           {/* Copyright */}
           <div className="mt-8 pt-4 border-t border-[#233554] text-center">
-            <p>&copy; 2024 Precious Muemi. All Rights Reserved.</p>
+            <p>© 2024 Precious Muemi. All Rights Reserved.</p>
           </div>
 
           {/* Back to Top Button */}
@@ -334,7 +334,7 @@ const App = () => {
         </div>
       </footer>
     </div>
+  </div>
   );
 };
-
 export default App;
