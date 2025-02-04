@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import AppWrapper from './AppWrapper';
 import About from './Component/About';
 import Services from './Component/services';
-import PortfolioShowcase from './Component/PortfolioShowcase';
+import Projects from './Component/Projects';
+// import PortfolioShowcase from './Component/PortfolioShowcase';
 import Home from './Component/Home'; 
 import GetStartedSection from './Pages/Contact';
 // import Blog from './Component/Blog';
@@ -54,7 +55,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<ServicesPage />} />
-                <Route path="/portfolio" element={<PortfolioShowcase />} />
+                <Route path="/portfolio" element={<Projects />} />
                 <Route path="/contact" element={<GetStartedSection />} />
                 {/* Add more routes as needed */}
               </Routes>
