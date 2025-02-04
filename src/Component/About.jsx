@@ -1,272 +1,209 @@
-// About.jsx
-import React from 'react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const About = () => {
-  return (
-    <div className="bg-midnight-blue text-white min-h-screen">
-      {/* About Section */}
-      <section className="about-section py-10">
-        <div className="container mx-auto px-4">
-          <section className="intro-section text-center mb-10">
-            <div className="big-circle bg-gray-200 rounded-full w-32 h-32 mx-auto flex items-center justify-center mb-4">
-              <div className="small-circle bg-gray-400 rounded-full w-16 h-16"></div>
-            </div>
-            <div className="retext">
-              <h1 className="text-3xl font-bold">-Learn More About Me-</h1>
-            </div>
-          </section>
-          <hr className="my-8" />
+  const [activeTab, setActiveTab] = useState('general');
 
-          {/* Biography Section */}
-          <div className="biography-section flex flex-wrap items-center mb-10">
-            <div className="w-full md:w-1/2 mb-8 md:mb-0">
-              <div className="about-frame">
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-gray-900 text-gray-100">
+      {/* Hero Section */}
+      <motion.section 
+        className="relative py-20 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center"
+            {...fadeIn}
+          >
+            <div className="relative w-40 h-40 mx-auto mb-8">
+              <div className="absolute inset-0 bg-blue-500/20 rounded-full animate-pulse"></div>
+              <div className="absolute inset-4 bg-blue-400/30 rounded-full animate-pulse delay-75"></div>
+              <div className="absolute inset-8 bg-blue-300/40 rounded-full animate-pulse delay-150"></div>
+              <img
+                src='src/Images/Profile.png'
+                alt="Profile"
+                className="absolute inset-0 w-full h-full rounded-full object-cover"
+              />
+            </div>
+            <h1 className="text-5xl font-playfair mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Learn More About Me
+            </h1>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Biography Section */}
+      <motion.section 
+        className="py-16 bg-slate-800/50"
+        {...fadeIn}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap items-center -mx-4">
+            <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
+              <div className="relative">
+                <div className="absolute inset-0 bg-blue-500/20 rounded-lg transform -rotate-6"></div>
                 <img
-                  src="/static/images/About_me.jpg"
-                  alt="about me"
-                  className="img-fluid rounded shadow"
+                  src='src/Images/About.jpg'
+                  alt="About me"
+                  className="relative rounded-lg shadow-xl w-full"
                 />
               </div>
             </div>
-            <div className="w-full md:w-1/2">
-              <div className="biography-text text-center">
-                <h1 className="text-2xl font-bold">Who's Cynthia?</h1>
-                <div className="flex justify-center items-center mt-3">
-                  <div className="line bg-gray-400 h-px w-16"></div>
-                  <div className="diamond bg-yellow-400 mx-3 w-4 h-4"></div>
-                  <div className="line bg-gray-400 h-px w-16"></div>
-                </div>
-                <p className="mt-4 text-lg">
-                  Currently a 4th-year student at St Paul's University. My stronghold lies in Python and
-                  Django, focusing on building high-performance applications. With a strong aptitude
+            <div className="w-full lg:w-1/2 px-4">
+              <div className="max-w-lg">
+                <h2 className="text-4xl font-playfair mb-6">Who's Cynthia?</h2>
+                <div className="h-1 w-20 bg-blue-500 mb-8"></div>
+                <p className="text-lg leading-relaxed mb-8 font-light">
+                  Currently a 4th-year student at St Paul's University. My stronghold lies in Motoko and
+                  Python, focusing on building high-performance applications. With a strong aptitude
                   for identifying and solving real-world problems through code, I am eager to
-                  contribute to dynamic teams and leverage opportunities to drive success. Actively
-                  involved in several tech communities, including Google Developer Student Club, AWS
-                  Community, African Ruby Community (ARC), and other innovation clubs and societies
-                  at the university. I am flexible with working hours and committed to continuous
-                  learning and professional growth.
+                  contribute to dynamic teams and leverage opportunities to drive success.
                 </p>
-
-                <div className="skills mt-5">
-                  <h1 className="text-2xl font-bold">Skills & Interests</h1>
-                  <div className="flex flex-wrap justify-center mt-4 space-x-2">
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fas fa-wordpress"></i> Wordpress
+                <div className="flex flex-wrap gap-3">
+                  {['Python', 'Django', 'AWS', 'UI/UX', 'Blockchain', 'AI & ML'].map((skill) => (
+                    <span key={skill} className="px-4 py-2 bg-blue-500/20 rounded-full text-sm font-medium hover:bg-blue-500/30 transition-colors">
+                      {skill}
                     </span>
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fab fa-aws"></i> Amazon WS
-                    </span>
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fas fa-network-wired"></i> Networking
-                    </span>
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fab fa-figma"></i> Figma DS
-                    </span>
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fas fa-palette"></i> UI/UX DS
-                    </span>
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fas fa-laptop-code"></i> Web DS/Dev
-                    </span>
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fas fa-martini-glass-citrus"></i> AI & ML
-                    </span>
-                    <span className="bg-yellow-400 text-black py-2 px-4 rounded mb-3">
-                      <i className="fas fa-briefcase-clock"></i> Blockchain
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Education Section */}
-          <div className="education-section mb-10">
-            <hr className="my-8" />
-            <div className="text-center mb-8">
-              <h1 className="text-2xl font-bold">
-                <span>
-                  <i className="fas fa-graduation-cap"></i>
-                </span>{' '}
-                || EDUCATION
-              </h1>
-              <div className="flex justify-center items-center mt-3">
-                <div className="line bg-gray-400 h-px w-16"></div>
-                <div className="diamond bg-yellow-400 mx-3 w-4 h-4"></div>
-                <div className="line bg-gray-400 h-px w-16"></div>
-              </div>
-              <p className="mt-4 text-lg">
-                In addition to my formal education at St Paul's University, I actively explore new
-                technologies and develop innovative software solutions. Currently, I am deepening my
-                knowledge in Cloud Architecture (AWS), Data Structures and Algorithms (DSA),
-                Artificial Intelligence, and Blockchain technology. I also pursue UI/UX design, web
-                development, and blog writing as a hobby and freelance side projects, which helps me
-                stay engaged with diverse technological trends and enhance my skill set.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center">
-              <div className="w-full md:w-1/2 mb-8">
-                <p className="text-lg font-bold">2017 - 2024</p>
-                <div className="listings">
-                  <div className="mb-4">
-                    <i className="fas fa-caret-right"></i>
-                    <h2 className="text-xl font-semibold">Professional Certificates</h2>
-                    <ul className="list-disc ml-6">
-                      <li>
-                        <h5>Amazon Web Services (AWS) Cloud Practitioner | KCA University - May 2024-Sep 2024</h5>
-                      </li>
-                      <li>
-                        <h5>Web Development | Emobilis Institute Westlands - Sep 2023-Dec 2023 (Graduated on Jul-27th-2024)</h5>
-                      </li>
-                      <li>
-                        <h5>Cisco Certified Network Associate (CCNA) | KCA University - May 2022 - Oct 2022</h5>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="mb-4">
-                    <i className="fas fa-caret-right"></i>
-                    <h2 className="text-xl font-semibold">Higher Education</h2>
-                    <ul className="list-disc ml-6">
-                      <li>
-                        <h5>Bachelor's Degree</h5>
-                        <p>Bachelors Software Development |St Paul's University | Sep 2021-Nov 2025</p>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="mb-4">
-                    <i className="fas fa-caret-right"></i>
-                    <h2 className="text-xl font-semibold">High School Studies</h2>
-                    <ul className="list-disc ml-6">
-                      <li>
-                        <h5>KCSE Examination</h5>
-                        <p>Completion Certificate | Gatero Girls Highschool| Jan 2017-Apr 2021</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Experience Section */}
-          <div className="experience-section mb-10">
-            <hr className="my-8" />
-            <div className="text-center mb-8">
-              <h1 className="text-2xl font-bold">MY EXPERIENCE</h1>
-              <div className="flex justify-center items-center mt-3">
-                <div className="line bg-gray-400 h-px w-16"></div>
-                <div className="diamond bg-yellow-400 mx-3 w-4 h-4"></div>
-                <div className="line bg-gray-400 h-px w-16"></div>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap justify-center">
-              <div className="w-full md:w-1/2 mb-8">
-                <h1 className="text-lg font-bold">2022-2025</h1>
-                <div className="btn-group flex justify-center mb-8">
-                  <button
-                    className="bg-yellow-400 text-black py-2 px-4 rounded mb-3 mr-2"
-                    onClick={() => showContent('general')}
-                  >
-                    General
-                  </button>
-                  <button
-                    className="bg-yellow-400 text-black py-2 px-4 rounded mb-3 mr-2"
-                    onClick={() => showContent('voluntary')}
-                  >
-                    Voluntary
-                  </button>
-                  <button
-                    className="bg-yellow-400 text-black py-2 px-4 rounded mb-3"
-                    onClick={() => showContent('hired')}
-                  >
-                    Placement
-                  </button>
-                </div>
-
-                <div className="content" id="general">
-                  <div className="visual text-center mb-4">
-                    <p className="visual-text text-xl font-bold">|| General - Work Experience ||</p>
-                  </div>
-                  <p className="text-lg">
-                    <span>
-                      <i className="fas fa-caret-right"></i>
-                    </span>
-                    <small> Industrial Electoral And Boundaries Commission (IEBC) </small>
-                  </p>
-                  <p className="text-light">Clerk Assistant || August - 2022</p>
-                  <p>
-                    In this role, I supported the electoral process by assisting with the management
-                    of voter registration, updating and maintaining electoral records, and ensuring
-                    smooth operations during elections. My duties included verifying voter
-                    information, preparing and organizing election materials, and providing
-                    logistical support on election day.
-                  </p>
-
-                  <div className="mt-8">
-                    <p className="text-lg">
-                      <span>
-                        <i className="fas fa-caret-right"></i>
-                      </span>
-                      <small> Crystal Computers Limited</small>
-                    </p>
-                    <p className="text-light">Receptionist & Tutor || May - September 2023</p>
-                    <p>
-                      As a receptionist, I handled a variety of online cyber services, including
-                      managing client inquiries, scheduling appointments, and providing support for
-                      computer-related issues. In addition, I served as a tutor, teaching Microsoft
-                      Office packages to students, which involved preparing lesson plans, delivering
-                      instructions, and assisting students with their coursework.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="content hidden" id="voluntary">
-                  <div className="visual text-center mb-4">
-                    <p className="visual-text text-xl font-bold">|| Voluntary - Work Experience ||</p>
-                  </div>
-                  <p className="text-lg">
-                    <span>
-                      <i className="fas fa-caret-right"></i>
-                    </span>
-                    <small> Kiambu High School Alumni Foundation</small>
-                  </p>
-                  <p className="text-light">IT Support & Maintenance || June 2024 - Current </p>
-                  <p>
-                    In this volunteer role, I work alongside a team to address IT issues within the
-                    alumni organization. My primary responsibilities include maintaining and updating
-                    the organization's social media platforms and overseeing the functionality of
-                    their new website, khsaf.org. This involves troubleshooting technical problems,
-                    ensuring website security, and managing content updates to enhance online
-                    engagement and support the foundation's activities.
-                  </p>
-                </div>
-
-                <div className="content hidden" id="hired">
-                  <div className="visual text-center mb-4">
-                    <p className="visual-text text-xl font-bold">|| Hired Basis - Work Experience ||</p>
-                  </div>
-                  <p className="text-lg">
-                    <span>
-                      <i className="fas fa-caret-right"></i>
-                    </span>
-                    <small> Coming Soon</small>
-                  </p>
-                  <p className="text-light">Random Hired Job || Some Month-Some Month 2024</p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Education Section */}
+      <motion.section 
+        className="py-16"
+        {...fadeIn}
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-playfair text-center mb-16">Educational Journey</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Formal Education */}
+            <div className="bg-slate-800/50 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
+              <h3 className="text-2xl font-semibold mb-6">Formal Education</h3>
+              <ul className="space-y-6">
+                <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:top-2">
+                  <h4 className="font-medium text-lg">Bachelor's in Software Development</h4>
+                  <p className="text-gray-400">St Paul's University | 2021-2025</p>
+                </li>
+                <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:top-2">
+                  <h4 className="font-medium text-lg">KCSE Certificate</h4>
+                  <p className="text-gray-400">Gatero Girls Highschool | 2017-2021</p>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Professional Certificates */}
+            <div className="bg-slate-800/50 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
+              <h3 className="text-2xl font-semibold mb-6">Professional Certificates</h3>
+              <ul className="space-y-6">
+                <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:top-2">
+                  <h4 className="font-medium text-lg">AWS Cloud Practitioner</h4>
+                  <p className="text-gray-400">Ujuzi | 2024</p>
+                </li>
+                <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:top-2">
+                  <h4 className="font-medium text-lg">Web Development</h4>
+                  <p className="text-gray-400">Emobilis Institute | 2023</p>
+                </li>
+                {/* <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:top-2">
+                  <h4 className="font-medium text-lg">CCNA</h4>
+                  <p className="text-gray-400">KCA University | 2022</p>
+                </li> */}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Experience Section */}
+      <motion.section 
+        className="py-16 bg-slate-800/50"
+        {...fadeIn}
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-playfair text-center mb-12">Experience</h2>
+          
+          {/* Tab Buttons */}
+          <div className="flex justify-center gap-4 mb-12">
+            {['general', 'voluntary', 'hired'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all
+                  ${activeTab === tab 
+                    ? 'bg-blue-500 text-white' 
+                    : 'bg-slate-700 text-gray-300 hover:bg-slate-600'}`}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {activeTab === 'general' && (
+              <>
+                <motion.div 
+                  className="bg-slate-700/50 rounded-xl p-8"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h3 className="text-2xl font-semibold mb-4">IEBC</h3>
+                  <p className="text-gray-400 mb-2">Clerk Assistant | August 2022</p>
+                  <p className="text-gray-300">Supported the electoral process by managing voter registration and maintaining electoral records.</p>
+                </motion.div>
+                <motion.div 
+                  className="bg-slate-700/50 rounded-xl p-8"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h3 className="text-2xl font-semibold mb-4">Crystal Computers Limited</h3>
+                  <p className="text-gray-400 mb-2">Receptionist & Tutor | May - September 2023</p>
+                  <p className="text-gray-300">Handled cyber services and taught Microsoft Office packages to students.</p>
+                </motion.div>
+              </>
+            )}
+
+            {activeTab === 'voluntary' && (
+              <motion.div 
+                className="bg-slate-700/50 rounded-xl p-8 col-span-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="text-2xl font-semibold mb-4">Gatero High School Alumni Foundation</h3>
+                <p className="text-gray-400 mb-2">IT Support & Maintenance | June 2024 - Current</p>
+                <p className="text-gray-300">Maintaining and updating the organization's social media platforms and website.</p>
+              </motion.div>
+            )}
+
+            {activeTab === 'hired' && (
+              <motion.div 
+                className="bg-slate-700/50 rounded-xl p-8 col-span-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="text-2xl font-semibold mb-4">Future Opportunities</h3>
+                <p className="text-gray-400">Ready for new challenges and opportunities.</p>
+              </motion.div>
+            )}
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 };

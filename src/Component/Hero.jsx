@@ -1,5 +1,6 @@
 import React from 'react';
-
+// import coderGirlImage from '../Images/👩_💻 coder girl.jpeg';
+import videoSrc from '../Images/7140d258b9986e0626116285cdfb5a20.mp4';
 const Hero = () => {
   return (
 
@@ -39,14 +40,14 @@ const Hero = () => {
       <div className="w-full md:w-1/2">
         <div className="framing">
           <div className="any-frame">
-            <video
-              autoPlay
-              loop
-              muted
-              className="img-fluid opacity-70 rounded"
-            >
-              <source src="/static/images/animation-1.webm" type="video/webm" />
-            </video>
+          <video
+  autoPlay
+  loop
+  muted
+  className="img-fluid opacity-70 rounded"
+>
+  <source src={videoSrc} type="video/mp4" />
+</video>
           </div>
         </div>
       </div>

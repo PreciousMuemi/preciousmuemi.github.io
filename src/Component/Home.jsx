@@ -1,29 +1,36 @@
+import React from 'react';
 import Hero from "../Component/Hero";
-import ContactSection from "../Component/Contact";
-import SkillsSection from "../Component/Skills";
-import ProjectsSection from "../Component/Projects";
-import AboutSection from "../Component/About";
-import Footer from "../Component/footer";
-import { motion } from "framer-motion";
-import Services from "./services";
-import Skillbar from "./Skillbar";
-// import CTASection from "../Component/CTA";
-import Testimonials from "../Component/Testimonials";
+import Contact from "../Component/Contact";
 
-import { useState } from "react";
+import Skills from "../Component/Skills";
+import IntroSection from '../Component/IntroSection';
+import ServiceSection from '../Component/ServiceSection';
+import CTASection from '../Component/CTA';
+import ServicesGrid from '../Component/ServicesGrid';
+import TechStackSection from '../Component/TechStackSection';
+
+import Projects from "../Component/Projects";
+import About from "../Component/About";
+import Testimonials from "../Component/Testimonials";
+// import Portfolio from "../Component/Portfolio"; // Ensure correct import
 
 const Home = () => {
-  const [isDarkTheme] = useState(true);
-
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <Hero isDarkTheme={isDarkTheme} />
-      <SkillsSection />
-      {/* <CTASection /> */}
-      <ContactSection />
+      <Hero />
+      <IntroSection />
+        <ServiceSection />
+        <CTASection />
+      <ServicesGrid />
+      <TechStackSection />
+      <Skills />
+      {/* <Portfolio /> Ensure this component is correctly imported and defined */}
+      <Projects />
+      <Contact />
       <Testimonials />
     </div>
   );
 };
 
 export default Home;
+

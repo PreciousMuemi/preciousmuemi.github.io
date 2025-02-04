@@ -5,6 +5,9 @@ import About from './Component/About';
 import Services from './Component/services';
 import PortfolioShowcase from './Component/PortfolioShowcase';
 import Home from './Component/Home'; 
+import GetStartedSection from './Pages/Contact';
+// import Blog from './Component/Blog';
+import ServicesPage from './Pages/Services'
 // Import other components as needed
 
 const App = () => {
@@ -34,9 +37,9 @@ const App = () => {
                   <Link to="/portfolio" className="text-[#8892b0] hover:text-[#64ffda] transition-colors">
                     Portfolio
                   </Link>
-                  <Link to="/blog" className="text-[#8892b0] hover:text-[#64ffda] transition-colors">
+                  {/* <Link to="/blog" className="text-[#8892b0] hover:text-[#64ffda] transition-colors">
                     Blog
-                  </Link>
+                  </Link> */}
                   <Link to="/contact" className="px-4 py-2 border border-[#64ffda] text-[#64ffda] rounded hover:bg-[#64ffda]/10 transition-colors">
                     Contact
                   </Link>
@@ -50,8 +53,9 @@ const App = () => {
                 {/* Define your routes here */}
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
+                <Route path="/services" element={<ServicesPage />} />
                 <Route path="/portfolio" element={<PortfolioShowcase />} />
+                <Route path="/contact" element={<GetStartedSection />} />
                 {/* Add more routes as needed */}
               </Routes>
             </main>

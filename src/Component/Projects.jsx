@@ -5,36 +5,36 @@ import PropTypes from 'prop-types';
 
 const projects = [
   {
-    title: "Blockchain Education Platform",
+    title: "SkillPulse_Blockchain Education Platform",
     description: "Decentralized learning management system built on Internet Computer Protocol",
     tech: ["Motoko", "React", "ICP", "TypeScript"],
     category: "blockchain",
-    githubUrl: "#",
-    demoUrl: "#"
+    githubUrl: "https://github.com/PreciousMuemi/SkillPulse",
+    demoUrl: "https://drive.google.com/file/d/1K0x6NTPKF6lrpw-lPwDn1kUmIhJBG56y/view?usp=sharing"
   },
   {
     title: "AI Insurance Underwriting",
     description: "Machine learning model for automated risk assessment and policy pricing",
     tech: ["Python", "TensorFlow", "Django", "PostgreSQL"],
     category: "ai",
-    githubUrl: "#",
-    demoUrl: "#"
+    githubUrl: "https://github.com/PreciousMuemi/AI-Insurance-Underwriting",
+    // demoUrl: "#"
   },
   {
     title: "Endocare",
     description: "Mobile health records management system for endocrinology clinics",
-    tech: ["Kotlin", "React Native", "Firebase", "Node.js"],
-    category: "mobile",
-    githubUrl: "#",
-    demoUrl: "#"
+    tech: ["Tailwind", "React Native", "Firebase", "Node.js"],
+    category: "Web",
+    githubUrl: "https://github.com/Wamziss/EndoCare",
+    demoUrl: "https://endo-care.vercel.app"
   },
   {
     title: "Social Analytics Dashboard",
     description: "Real-time social media analytics and sentiment analysis platform",
     tech: ["React", "Power BI", "Python", "MongoDB"],
     category: "analytics",
-    githubUrl: "#",
-    demoUrl: "#"
+    githubUrl: "https://spuacke-my.sharepoint.com/:u:/g/personal/bsclmr204222_spu_ac_ke/EV5lN9ZAwdNKg_43WmCywY4B41qrcujqp1CSNS2EJlTKTg?e=GxTlPh",
+    demoUrl: "https://spuacke-my.sharepoint.com/:u:/g/personal/bsclmr204222_spu_ac_ke/EV5lN9ZAwdNKg_43WmCywY4B41qrcujqp1CSNS2EJlTKTg?e=GxTlPh"
   }
 ];
 
